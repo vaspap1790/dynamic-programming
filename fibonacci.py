@@ -1,3 +1,6 @@
+import timeit
+
+
 def fib(n):
     if n == 0: return 1
     if n == 1: return 1
@@ -27,3 +30,12 @@ def fib_bottom_up(n):
 print(fib(4))
 print(fib_memoization(4))
 print(fib_bottom_up(4))
+
+print('fib(4):', timeit.timeit('fib(4)', number=1, globals=globals()))
+print('fib(30):', timeit.timeit('fib(15)', number=1, globals=globals()))
+
+print('fib_memoization(4):', timeit.timeit('fib_memoization(4)', number=1, globals=globals()))
+print('fib_memoization(30):', timeit.timeit('fib_memoization(15)', number=1, globals=globals()))
+
+print('fib_bottom_up(4):', timeit.timeit('fib_bottom_up(4)', number=1, globals=globals()))
+print('fib_bottom_up(30):', timeit.timeit('fib_bottom_up(15)', number=1, globals=globals()))
